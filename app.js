@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const { UrlModel } = require("./models/shortUrl");
 
 mongoose.connect(
-  "mongodb+srv://abhi1:abhi1234@cluster0.bjo8c.mongodb.net/urlShortDB", {userNewUrlParser: true, useUnifiedTopology: true}
+  "mongodb+srv://abhi1:abhi1234@cluster0.bjo8c.mongodb.net/urlShortDB"
 );
 
 app.set("view engine", "ejs");
