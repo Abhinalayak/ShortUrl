@@ -33,7 +33,12 @@ app.post("/create", function (req, res) {
 
 app.get("/:urlId", function (req, res) {
   UrlModel.findOne({ shortUrl: req.params.urlId }, function (err, data) {
-    if (err) throw err;
+    if (data){
+      res.redirect(data.longUrl);
+    }else{
+      res.send("NO URL found");
+    }
+    
   });
 });
 
