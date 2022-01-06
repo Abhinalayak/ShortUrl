@@ -5,8 +5,7 @@ const mongoose = require("mongoose");
 const { UrlModel } = require("./models/shortUrl");
 
 mongoose.connect(
-  "mongodb+srv://abhi1:abhi1234@cluster0.bjo8c.mongodb.net/urlShortDB",
-  { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }
+  "mongodb+srv://abhi1:abhi1234@cluster0.bjo8c.mongodb.net/urlShortDB"
 );
 
 app.set("view engine", "ejs");
@@ -48,15 +47,14 @@ app.get("/delete/:id", function (req, res) {
   );
 });
 
-
 let port = process.env.PORT;
 if (port == null || port == "") {
   port = 3000;
 }
- 
-app.listen(port, function() {
+
+app.listen(port, function () {
   console.log("Server started succesfully");
-});   
+});
 
 function generateUrl() {
   var newResult = "";
